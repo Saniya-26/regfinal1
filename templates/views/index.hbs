@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up and Sign in page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1323a3453e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div class="container">   
+        <div class="form-box">
+            <h1 id="title">success</h1>
+            
+        </div>
+    </div>
+    <script>
+        let signupBtn=document.getElementById("signupBtn");
+        let signinBtn=document.getElementById("signinBtn");
+        let nameField=document.getElementById("nameField");
+        let title=document.getElementById("title");
+
+        signinBtn.onclick=function()
+        {
+            nameField.style.maxHeight="0";
+            title.innerHTML="Sign in";
+            signupBtn.classList.add("disable");
+            signinBtn.classList.remove("disable");
+        }
+        signupBtn.onclick=function()
+        {
+            nameField.style.maxHeight="60px";
+            title.innerHTML="Sign Up";
+            signupBtn.classList.remove("disable");
+            signinBtn.classList.add("disable");
+        }
+    </script>
+</body>
+</html>
