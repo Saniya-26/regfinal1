@@ -49,14 +49,14 @@ app.set("views", temp_path);
 // });
 
 app.get("/", (req,res) => {
-    res.render("register")
+    res.sendFile(static_path + "/register.html");
 });
 
-app.get("/login", (req,res) => {
+/*app.get("/login", (req,res) => {
     res.render("login")
-});
+});*/
 
-app.post("/register", async(req,res)=>{
+app.post("/", async(req,res)=>{
     try{
         const pwd=req.body.password;
         const cpwd=req.body.confirmpassword;
@@ -68,7 +68,7 @@ app.post("/register", async(req,res)=>{
                 confirmpassword:cpwd
             })
             const registered=await reg.save();
-            res.status(201).render("index");
+            res.status(201).sendFile(static_path + "/register.html");
         }
         else{
             res.send("Password are not matching");
